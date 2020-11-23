@@ -53,4 +53,7 @@ defmodule EctoIPRange.IP4 do
   @impl Ecto.Type
   def dump(%__MODULE__{} = address), do: {:ok, address}
   def dump(_), do: :error
+
+  @impl Ecto.Type
+  def equal?(term1, term2), do: cast(term1) === cast(term2)
 end

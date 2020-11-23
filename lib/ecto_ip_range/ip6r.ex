@@ -125,4 +125,7 @@ defmodule EctoIPRange.IP6R do
       _ -> :error
     end
   end
+
+  @impl Ecto.Type
+  def equal?(term1, term2), do: cast(term1) === cast(term2)
 end
